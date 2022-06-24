@@ -9,7 +9,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 export default function CartWidget() {
     return (
         <div className="Widget">
-            <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+            <h2><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></h2>
 
             <p>0</p>
         </div>
