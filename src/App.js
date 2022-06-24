@@ -2,6 +2,8 @@ import './App.css';
 import ItemListContainer from './Components/ItemListContainer';
 import NavBar from './Components/NavBar.jsx';
 import Slider from './Components/Slider';
+import ItemCount from './Components/ItemCount';
+
 
 //@ts-check
 
@@ -11,8 +13,8 @@ function App() {
     <>
       <NavBar />
       <Slider />
-      <ItemListContainer greeting="Cumpliendo con Desafios"/>
-      
+      <ItemListContainer greeting="Contador Con Boton"/>
+      <ItemCount />
     </>
   
   )

@@ -1,0 +1,4 @@
+.containerCount{
+    grid-template-columns: 50%;
+    grid-template-rows: 300px;
+}
