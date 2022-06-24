@@ -2,6 +2,7 @@ import './App.css';
 import ItemListContainer from './Components/ItemListContainer';
 import NavBar from './Components/NavBar.jsx';
 import Slider from './Components/Slider';
+
 //@ts-check
 
 
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Slider />
       <ItemListContainer greeting="Cumpliendo con Desafios"/>
+      
     </>
   
   )
