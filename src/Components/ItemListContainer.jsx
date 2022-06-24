@@ -1,13 +1,15 @@
 import React from 'react'
+import ItemCount from './ItemCount'
 import './ItemListContainer.css'
 
 
-export default function ItemListContainer({greeting}) {
+export default function ItemListContainer() {
+    // Variable para administrar Stok
+    let maxStock = 100;
+
+
+
     return (
-        <div className="containerGreeting">
-            
-            <h2>{greeting}</h2>
-            
-        </div>
+        <ItemCount maxStock={maxStock}/>
     )
 }

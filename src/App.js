@@ -1,6 +1,6 @@
 import './App.css';
 import ItemListContainer from './Components/ItemListContainer';
-import NavBar from './Components/NavBar.jsx';
+import NavBar from './Components/Header/NavBar.jsx';
 import Slider from './Components/Slider';
 import ItemCount from './Components/ItemCount';
 
@@ -9,12 +9,13 @@ import ItemCount from './Components/ItemCount';
 
 
 function App() {
+
   return (
     <>
       <NavBar />
       <Slider />
-      <ItemListContainer greeting="Contador Con Boton"/>
-      <ItemCount />
+      <ItemListContainer/>
+      
     </>
   
   )
