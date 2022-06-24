@@ -1,13 +1,16 @@
 import './App.css';
+import ItemListContainer from './Components/ItemListContainer';
 import NavBar from './Components/NavBar.jsx';
+import Slider from './Components/Slider';
 //@ts-check
 
 
 function App() {
   return (
     <>
-      <NavBar/>
-      <h2>Los candidatos</h2>
+      <NavBar />
+      <Slider />
+      <ItemListContainer greeting="Cumpliendo con Desafios"/>
     </>
   
   )

@@ -1,33 +1,23 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/icons-material/IconButton';
-import { Menu as MenuIcon } from "@material-ui/icons";
+import React from 'react'
+import CartWidget from './CartWidget'
+import './NavBar.css'
 
-export default function ButtonAppBar() {
+
+export default function NavBar() {
     return (
-        
-        <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-            <Toolbar>
-            <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-            >
-                <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                News
-            </Typography>
-            <Button color="inherit">Login</Button>
-            </Toolbar>
-        </AppBar>
-        </Box>
-    );
+        <header className="navContainer">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Learn More</a></li>
+            </ul>
+            
+            <label><a href="/">Talent Supply</a></label>
+            
+
+            <div className="CartWidget">
+                <CartWidget />
+            </div>
+        </header>
+    )
 }
