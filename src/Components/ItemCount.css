@@ -1,4 +1,46 @@
 .containerCount{
-    grid-template-columns: 50%;
-    grid-template-rows: 300px;
+    padding: 10px;
+    background-color: #FA9F42;
+    margin-top: 5px;
+}
+
+.CountObjets{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+
+.CountObjet{
+    display: flex;
+    align-items: center;
+    
+    padding: 15px;
+    color: #fff;
+    align-self: start;
+    font-size: 25px;
+}
+
+.CountObjet button{
+    width: 30px;
+    margin: 0 5px;
+    font-size: 25px;
+    
+    color: #fff;
+
+    background-color: #2B4162;
+
+}
+
+.textContainer{
+    display: flex;
+    align-items: center;
+
+
+
+    background-color: #2B4162;
+    padding: 15px;
+    color: #fff;
+
+    font-size: 15px;
 }
