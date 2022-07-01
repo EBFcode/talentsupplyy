@@ -8,13 +8,24 @@ import ItemCount from './Components/ItemCount';
 //@ts-check
 
 
+
 function App() {
 
+  function onAdd(e){
+    let vocales = ["a","e","i","o","u"];
+
+    vocales.includes(e.key) && e.preventDefault();
+
+  }
+
   return (
+
     <>
       <NavBar />
       <Slider />
       <ItemListContainer/>
+      <input type="text" onKeyDown={onAdd}/>
+
       
     </>
   
