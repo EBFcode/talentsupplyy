@@ -22,7 +22,7 @@ export default function ItemCount({stock, initial, onAdd}) {
 
 
 
-    function onAdd(){
+    function sumar(){
 
         if (numero <= stock){
             setNumero(numero + 1);
@@ -37,7 +37,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         
     }
 
-    function onSubtract(){
+    function restar(){
 
         if (disponibleStock <= stock) {
             setNumero(numero - 1);
@@ -61,14 +61,14 @@ export default function ItemCount({stock, initial, onAdd}) {
                 </div>
 
                 <div className="CountObjet">
-                    <button onClick={() => onSubtract()} className="menos">-</button>
+                    <button onClick={() => restar()} className="menos">-</button>
                     <h4>{numero}</h4>
                     {/* Funcion sumar 1 */}
-                    <button onClick={() => onAdd()} className="mas">+</button>
+                    <button onClick={() => sumar()} className="mas">+</button>
                 </div>
 
                 <div className="textContainer" >
-                    <button className="AgregarStock">Agrega Stok</button>
+                    <button onClick={() => onAdd(numero)} className="AgregarStock">Agrega Stok</button>
                 </div>
 
             </div>
