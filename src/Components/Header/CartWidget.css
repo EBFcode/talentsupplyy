@@ -4,8 +4,11 @@
     width: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
     box-shadow: 5px 5px 5px rgba(250,159,66, 0.5);
     transition: all 0.2s ease;
+    color: #fff;
+
 }
 
 .Widget:hover{
@@ -14,7 +17,6 @@
 
 .Widget p{
     padding: 5px;
-    color: #fff;
     font-size: 20px;
     font-weight: bold;
 }

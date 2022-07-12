@@ -1,16 +1,27 @@
 import './App.css';
-import ItemListContainer from './Components/ItemListContainer';
-import NavBar from './Components/NavBar.jsx';
+import NavBar from './Components/Header/NavBar.jsx';
 import Slider from './Components/Slider';
-//@ts-check
-
+import ItemCount from './Components/ItemCount/ItemCount';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
+
+  function onAdd(e){
+    let vocales = ["a","e","i","o","u"];
+
+    vocales.includes(e.key) && e.preventDefault();
+  }
+
   return (
+
     <>
       <NavBar />
       <Slider />
-      <ItemListContainer greeting="Cumpliendo con Desafios"/>
+      {/* <ItemListContainer/> */}
+      <ItemDetailContainer/>
+      <input type="text" onKeyDown={onAdd}/>
+
+      
     </>
   
   )

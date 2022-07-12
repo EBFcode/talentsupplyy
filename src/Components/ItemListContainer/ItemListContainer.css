@@ -1,0 +1,14 @@
+.containerGreeting{
+    padding:0 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px;
+    justify-items: center;
+}
+
+.containerGreeting h2{
+    color: #FA9F42;
+    padding: 10px;
+    background-color: #2B4162;
+    border-radius: 5px;
+}

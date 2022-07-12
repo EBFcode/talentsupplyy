@@ -4,7 +4,7 @@ import './Slider.css'
 export default function Slider() {
     return (
         <div className="slider">
-            <h2>Talent Supply, Web for learn React. <br></br>:D Hi, the best Tutor!<br></br>I'm working ;D</h2>
+            <h2>Talent Supply, Web for learn React. <br></br>:D Hi, now i'll make a button!<br></br>I'm working ;D</h2>
         </div>
 
         

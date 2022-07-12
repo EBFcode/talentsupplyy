@@ -14,7 +14,7 @@ label a{
     font-weight: bold;
     font-size: 25px;
     box-shadow: 5px 5px 5px rgba(250,159,66, 0.5);
-
+    
 }
 
 
@@ -40,6 +40,8 @@ label:hover{
     margin: 5px;
     padding: 10px;
     background-color: #FA9F42;
+    border: 1px solid #fff;
+
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(250,159,66, 0.5);
     transition: all 0.2s ease;
@@ -47,6 +49,8 @@ label:hover{
 
 .navContainer ul li:hover{
     box-shadow: 2px 2px 5px rgba(250,159,66, 0.5);
+    text-decoration: overline;
+
 }
 
 .navContainer ul li a{
