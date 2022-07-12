@@ -4,7 +4,6 @@ export default function Item({ item }) {
     console.log(item)
     return (
         <>
-        
         <div className='container'>
             <p> ID: {item.id} </p>
             <p> Titulo: {item.title}</p>
