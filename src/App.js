@@ -1,11 +1,11 @@
 import './App.css';
-import ItemListContainer from './Components/ItemListContainer';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import NavBar from './Components/Header/NavBar.jsx';
 import Slider from './Components/Slider';
 import ItemCount from './Components/ItemCount';
 
 
-//@ts-check
+
 
 
 
