@@ -1,13 +1,8 @@
 import './App.css';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import NavBar from './Components/Header/NavBar.jsx';
 import Slider from './Components/Slider';
-import ItemCount from './Components/ItemCount';
-
-
-
-
-
+import ItemCount from './Components/ItemCount/ItemCount';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -15,7 +10,6 @@ function App() {
     let vocales = ["a","e","i","o","u"];
 
     vocales.includes(e.key) && e.preventDefault();
-
   }
 
   return (
@@ -23,7 +17,8 @@ function App() {
     <>
       <NavBar />
       <Slider />
-      <ItemListContainer/>
+      {/* <ItemListContainer/> */}
+      <ItemDetailContainer/>
       <input type="text" onKeyDown={onAdd}/>
 
       
