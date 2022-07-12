@@ -1,6 +1,6 @@
 import React from 'react'
-// import ItemCount from '../ItemCount.jsx'
 import './ItemListContainer.css'
+import ItemList from './itemList'
 
 
 export default function ItemListContainer() {
@@ -13,11 +13,18 @@ export default function ItemListContainer() {
         const prod = [
             {
                 id: 1,
-                name: 'samsung'
+                title: 'samsung',
+                price: 1000,
+                pictureUrl: "https://images.samsung.com/is/image/samsung/assets/latin/2202/pcd/smp/PCD_B_KV_Merchandising_264x264_mo.png?$264_264_PNG$",
+                stock: 5
             },
             {
                 id: 2,
-                name: 'apple'
+                title: 'Apple',
+                price: 2500,
+                pictureUrl: "https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png",
+                stock: 7
+
             }
         ]
 
@@ -28,7 +35,7 @@ export default function ItemListContainer() {
         })
 
         task
-        .then(response => console.log(response))
+        .then(response => setItems(response))
         .catch(err => console.log(err))
         .finally(() => setLoading(false));
 
@@ -46,7 +53,7 @@ export default function ItemListContainer() {
     return (
         <>
         {loading && 'loading..'}
-        {items && <div>  </div>/}
+        {items && <ItemList items={items} /> } 
         </>
     )
 }
