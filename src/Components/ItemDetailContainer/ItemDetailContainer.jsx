@@ -1,8 +1,10 @@
 import {React, useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 
 export default function ItemDetailContainer() {
     const [item, setItem] = useState([])
+    let {idItem} = useParams();
 
         useEffect(() => {
 
@@ -16,11 +18,10 @@ export default function ItemDetailContainer() {
                 },
                 {
                     id: 2,
-                    title: 'Apple',
+                    title: 'apple',
                     price: 2500,
                     pictureUrl: "https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png",
                     stock: 7
-
                 }
             ]
 
@@ -32,11 +33,11 @@ export default function ItemDetailContainer() {
 
             task
             .then(response => {
-                let res = response.find((item) => item.id == 1);
-                setItem(res);
+                const arrayFiltered = response.find((item) => item.id === Number(idItem));
+                setItem(arrayFiltered)
             })
             .catch(err => console.log(err));
-        }, [])
+        }, [idItem])
         
     return (
         <>

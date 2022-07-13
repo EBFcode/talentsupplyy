@@ -1,26 +1,22 @@
 import './App.css';
 import NavBar from './Components/Header/NavBar.jsx';
-import Slider from './Components/Slider';
 import ItemCount from './Components/ItemCount/ItemCount';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  function onAdd(e){
-    let vocales = ["a","e","i","o","u"];
-
-    vocales.includes(e.key) && e.preventDefault();
-  }
-
   return (
-
     <>
-      <NavBar />
-      <Slider />
-      {/* <ItemListContainer/> */}
-      <ItemDetailContainer/>
-      <input type="text" onKeyDown={onAdd}/>
-
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>} />
+          <Route path='/category/:idCategory' element={<ItemListContainer/>} />
+          <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
       
     </>
   

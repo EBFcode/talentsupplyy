@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Item({ item }) {
     console.log(item)
@@ -10,6 +11,9 @@ export default function Item({ item }) {
             <p>Price: {item.price}</p>
             <img src={item.pictureUrl} alt={item.title}/>
             <p>Stock:{item.stock} </p>
+            <button>
+                <Link to={`item/${item.id}`}>Ver detalle del producto</Link>
+            </button>
         </div>
         </>
     );
