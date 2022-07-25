@@ -1,7 +1,8 @@
 import React from 'react'
 import './ItemListContainer.css'
 import ItemList from './itemList'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { CartContext } from '../../Context/CartContext';
 
 export default function ItemListContainer() {
     const [loading, setLoading] = React.useState(true)

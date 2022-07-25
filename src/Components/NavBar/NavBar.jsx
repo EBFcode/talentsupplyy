@@ -10,13 +10,9 @@ export default function NavBar() {
         <header className="navContainer">
             <ul>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='/category/samsung'>samsung</Link></li>
+                <li><Link to='/category/samsung'>Ropa</Link></li>
                 <li><Link to='/category/apple'>apple</Link></li>
             </ul>
-            
-            {/* <label><a href="/">Talent Supply</a></label> */}
-            
-
             <div className="CartWidget">
                 <CartWidget />
             </div>
