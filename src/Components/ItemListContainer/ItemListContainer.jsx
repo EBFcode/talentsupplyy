@@ -3,7 +3,7 @@ import './ItemListContainer.css'
 import ItemList from './itemList'
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
-import { doc, getDoc, getFirestore } from "firebase/firestore"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 export default function ItemListContainer() {
     const [loading, setLoading] = React.useState(true)
@@ -13,39 +13,27 @@ export default function ItemListContainer() {
     let {idCategory} = useParams();
 
     React.useEffect(() => {
+        const database  = getFirestore();
+        const coleccion = 'productos'
+        const reference = collection(database, coleccion)
 
-        let id = "0dt02mfeUCBimgVRvXKO"
-
-        let collection = 'ropa';
-
-        const db = getFirestore();
-
-        // Conectate a firebase / 
-        const ropa = doc(db, collection, id)
-        
-        getDoc(ropa).then((snapshot) => {setItem({id: snapshot.id, ...snapshot.data()})})
-
-        let url = 'https://imcod3r.github.io/CatStoreApi/api.json'
-
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (!idCategory) {
-                setItems(data);
-            } else {
-            const arrayFiltrado = data.filter((item) => item.categoria === idCategory);
-            setItems(arrayFiltrado)
-            }
-        })
-        .catch(error => console.warn(error))
-        .finally(() => setLoading(false))
-
+        if (!idCategory) {
+            getDocs(reference).then((snapshot) => setItems(snapshot.docs.map((documentos) => ({id: documentos.id, ...documentos.data()}))))
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))
+        } else {
+            const itemRef = query(collection(database, 'productos'), where('categoria', '==' ,idCategory))
+            getDocs(itemRef).then((snapshot) => setItems(snapshot.docs.map((documentos) => ({id: documentos.id, ...documentos.data()}))))
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))
+        }
+    
     }, [idCategory])
 
     return (
         <>
         {console.log(item)}
-        {loading && 'loading..'}
+        {loading && <h1 className=''>loading..</h1>}
         {items && <ItemList items={items} /> } 
         </>
     )
