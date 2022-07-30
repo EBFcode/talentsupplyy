@@ -1,15 +1,12 @@
-import { React } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../Context/CartContext";
 import ItemCount from "./ItemCount/ItemCount";
 
 export default function ItemDetail({ item }) {
 
-  const {hola} = React.useContext(CartContext)
+  const [mostrarBoton, setMostrarBoton] = React.useState(true);
 
-  function onAdd(count) {
-    hola();
-  }
+  const onAdd = count => console.log(count) 
 
   return (
     <>
@@ -19,11 +16,14 @@ export default function ItemDetail({ item }) {
         <p> Price: {item.precio}</p>
         <p> Stock: {item.stock}</p>
         <img src={item.url} alt={item.titulo} />
-        {/* Hacer Render recordar */}
-        <Link to={"/cart"} style={{ textDecoration: "none" }}>
-          Finalizar Compra
-        </Link>
-        <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+        <div>
+          {mostrarBoton ? 
+          <ItemCount stock={item.stock} initial={1} onAdd={onAdd} setMostrarBoton={setMostrarBoton} /> 
+          : 
+          <Link to={"/cart"} style={{ textDecoration: "none" }}>
+            Finalizar Compra
+          </Link> }
+        </div>
       </div>
     </>
   );
