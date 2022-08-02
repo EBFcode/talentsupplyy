@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 
 export default function ItemCount({stock, initial, onAdd, setMostrarBoton}) {
-    // Cambiar numero a count
+    
     const [count, setCount]  = useState(initial);
 
     // Declarando un STATE 
