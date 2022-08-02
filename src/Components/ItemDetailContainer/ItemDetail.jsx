@@ -11,11 +11,10 @@ export default function ItemDetail({ item }) {
   return (
     <>
       <div className="container">
-        <p> ID: {item.id} </p>
-        <p> Titulo: {item.titulo}</p>
+        <p> Nombre: {item.nombre}</p>
         <p> Price: {item.precio}</p>
         <p> Stock: {item.stock}</p>
-        <img src={item.url} alt={item.titulo} />
+        <img src={item.img} alt={item.nombre} />
         <div>
           {mostrarBoton ? 
           <ItemCount stock={item.stock} initial={1} onAdd={onAdd} setMostrarBoton={setMostrarBoton} /> 
