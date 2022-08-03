@@ -5,23 +5,28 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CartProvider from './Context/CartContext';
 import AgregandoProductos from './Test/AgregandoProductos';
 import CartWidget from './Components/CartContainer/CartWidget';
+import { ThemeProvider } from '@emotion/react';
+import theme from './themeconfig'
 
 // rfc 
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<ItemListContainer/>} />
-          <Route path='/category/:idCategory' element={<ItemListContainer/>} />
-          <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
-          <Route path='/cart' element={<CartWidget/>} /> 
-          <Route path='/ingresarProductos' element={<AgregandoProductos/>} />
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+    
+      <CartProvider>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path='/' element={<ItemListContainer/>} />
+              <Route path='/category/:idCategory' element={<ItemListContainer/>} />
+              <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
+              <Route path='/cart' element={<CartWidget/>} /> 
+              <Route path='/ingresarProductos' element={<AgregandoProductos/>} />
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+      </CartProvider>
   )
 }
 

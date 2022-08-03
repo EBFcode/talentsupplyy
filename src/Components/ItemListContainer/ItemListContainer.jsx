@@ -3,6 +3,7 @@ import './ItemListContainer.css'
 import ItemList from './itemList'
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
+import { Box, Button } from '@mui/material';
 
 export default function ItemListContainer() {
     const [loading, setLoading] = React.useState(true)
@@ -30,7 +31,8 @@ export default function ItemListContainer() {
 
     return (
         <>
-        {loading && <h1 className=''>loading..</h1>}
+        
+        {loading && <div className="centrando"><div className="lds-hourglass"></div></div>}
         {items && <ItemList items={items} /> } 
         </>
     )

@@ -26,7 +26,7 @@ export default function CartWidget() {
               <TableCell align="right" sx={{ color: 'white' }} >Precio</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell sx={{ color: 'white' }}>Descripcion</TableCell>
+              <TableCell sx={{ color: 'white' }}>Descripcion</TableCell>
               <TableCell sx={{ color: 'white' }} align="right">Cantidad.</TableCell>
               <TableCell sx={{ color: 'white' }} align="right">Unidad</TableCell>
               <TableCell sx={{ color: 'white' }} align="right">Total</TableCell>
