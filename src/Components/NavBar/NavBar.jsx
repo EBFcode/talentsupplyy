@@ -1,25 +1,18 @@
 import React from 'react'
-import CartWidget from './CartWidget'
 import './NavBar.css'
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Typography } from '@mui/material';
 
 
 export default function NavBar() {
+
+    const navigate = useNavigate();
+
     return (
         <>
-        <header className="navContainer">
-            <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/category/lapto'>Laptop</Link></li>
-                <li><Link to='/category/mouse'>Mouse</Link></li>
-                <li><Link to='/ingresarProductos'>Agregar Productos</Link></li>
-
-
-            </ul>
-            <div className="CartWidget">
-                <CartWidget />
-            </div>
-        </header>
+        <Typography onClick={() => navigate('/')}  variant="h2" color="primary" align='center' >
+            Talent Supplay
+        </Typography>
         </>
     )
 }

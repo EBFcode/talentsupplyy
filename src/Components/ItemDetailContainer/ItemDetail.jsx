@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
 import ItemCount from "./ItemCount/ItemCount";
 
 export default function ItemDetail({ item }) {
 
   const [mostrarBoton, setMostrarBoton] = React.useState(true);
+  const {addItem} = React.useContext(CartContext)
 
-  const onAdd = count => console.log(count) 
+  function onAdd(count) {
+    addItem(item, count)
+  }
 
   return (
     <>
