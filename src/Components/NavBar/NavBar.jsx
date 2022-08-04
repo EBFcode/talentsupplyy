@@ -11,48 +11,33 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
-const pages = ['Productos', 'Sobre Nosotros', 'Blog'];
-const settings = ['Agregar Productos', 'Eliminar Productos'];
-
-/* test */
-
-const settings = [
-    {
-        id: 1,
-        title: 'Ingresar',
-        link: '/login', 
-    },
-    {
-        id: 2,
-        title: 'Registrarse',
-        link: '/register', 
-    },
-];
+import { Link } from 'react-router-dom';
 
 const pages = [
     {
-        id: 1,
-        title: 'Inicio',
-        link: '/',
-        onclick: () => handleCloseNavMenu()
+    id: 1,
+    title: 'Home',
+    link: '/', 
     },
     {
         id: 2,
-        title: 'Hoodies',
-        link: 'category/Hoodies',
-        onclick: () => handleCloseNavMenu()
+        title: 'Ofertas',
+        link: '/ofertas', 
+    }
+];
+const settings = [
+    {
+    id: 1,
+    title: 'Ingresar productos',
+    link: '/ingresarProductos', 
     },
     {
-        id: 3,
-        title: 'Zapatillas',
-        link: 'category/Zapatillas',
-        onclick: () => handleCloseNavMenu()
-    },
-]
+        id: 2,
+        title: 'Eliminar Productos',
+        link: '/eliminarProductos', 
+    }
+];
 
-/* test */
 
 const ResponsiveAppBar = () => {
 const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -127,13 +112,15 @@ return (
                     >
                     {pages.map((page) => (
                         <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">{page}</Typography>
+                        <Link to={page.link}>
+                            <Typography textAlign="center">{page.title}</Typography>
+                        </Link>
+                        
                         </MenuItem>
                     ))}
                     </Menu>
                 </Box>
                 
-                {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                 <Typography
                     variant="h5"
                     noWrap
@@ -159,7 +146,7 @@ return (
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                     >
-                        {page}
+                        <Link to={page.link}> {page.title} </Link>
                     </Button>
                     ))}
                 </Box>
@@ -188,7 +175,9 @@ return (
                     >
                     {settings.map((setting) => (
                         <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
+                        <Link to={setting.link}>
+                            <Typography textAlign="center">{setting.title}</Typography>
+                        </Link>
                         </MenuItem>
                     ))}
                     </Menu>

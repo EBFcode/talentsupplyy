@@ -2,6 +2,7 @@ import React from 'react'
 import './Slider.css'
 import { CardMedia, Container, Typography, Button } from "@mui/material";
 import { Box } from '@mui/system';
+import { Transaction } from 'firebase/firestore';
 
 export default function Slider() {
     return (
@@ -15,11 +16,11 @@ export default function Slider() {
                 />
 
                 <Container maxWidth="xl">
-                    <Box sx={{ width: 400, height: 200,borderRadius: 5, position: 'absolute', top: 15,left:15, p: 5}}>
-                        <Typography variant="h2" color="white">
-                            Conector aparte
+                    <Box sx={{ width: 400, height: 200,borderRadius: 5, position: 'absolute', top: 100,left:'10%', p: 5}}>
+                        <Typography variant="h3" color="white">
+                            Lo más caro siempre es mejor
                         </Typography>
-                        <Button>Reservar</Button>
+                        <Button variant="contained" color="success" sx={{ px: 8,py: 2, mt: 5, '&:hover':{transition: '1s', backgroundColor: '#000'},}} href="/">Reservar</Button>
                     </Box>
                 </Container>
                 
