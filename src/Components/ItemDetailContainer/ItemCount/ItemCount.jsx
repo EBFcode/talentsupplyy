@@ -29,23 +29,27 @@ export default function ItemCount({stock, initial, onAdd, setMostrarBoton}) {
                     <h4 id="textStock">Stock Disponible: {stock}</h4>
                 </div>
 
-                <div className="CountObjet">
-                    <button onClick={() => restar()} className="menos">-</button>
-                    <h4>{count}</h4>
-                    {/* Funcion sumar 1 */}
-                    <button onClick={() => sumar()} className="mas">+</button>
+                <div style={{backgroundColor: '#e1872d', borderRadius: 5}}>
+                    <div className="CountObjet" style={{margin: '0 auto'}}>
+                        <button onClick={() => restar()} className="menos">-</button>
+                        <h4>{count}</h4>
+                        {/* Funcion sumar 1 */}
+                        <button onClick={() => sumar()} className="mas">+</button>
+                    </div>
                 </div>
+                
 
                 <div className="textContainer" >
+
                     <button onClick={() => {
                         onAdd(count);
                         setMostrarBoton(false);
                     }} className="AgregarStock">Agregar al carrito</button>
+
                 </div>
 
             </div>
             
-
         </div>
     )
 }

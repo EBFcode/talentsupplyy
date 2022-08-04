@@ -1,0 +1,36 @@
+body{
+    background-color: #f2f2f2;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.gridContainer{
+    width: 80%;
+    display: grid;
+    height: 80vh;
+    grid-template-columns: 55% 2% 43%;
+    grid-template-rows: 1fr;
+    margin: 0 auto;
+}
+
+.gridItem{
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.stockStyle{
+    
+}
+
+.gridItem img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.descripcion{
+    border: 1px solid rgb(213, 213, 213);
+}

@@ -112,7 +112,7 @@ return (
                     >
                     {pages.map((page) => (
                         <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        <Link to={page.link}>
+                        <Link style={{color: '#293132', textDecoration: 'none'}} to={page.link}>
                             <Typography textAlign="center">{page.title}</Typography>
                         </Link>
                         
@@ -146,7 +146,7 @@ return (
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                     >
-                        <Link to={page.link}> {page.title} </Link>
+                        <Link style={{color: '#fff', textDecoration: 'none'}}  to={page.link}> {page.title} </Link>
                     </Button>
                     ))}
                 </Box>
@@ -175,7 +175,7 @@ return (
                     >
                     {settings.map((setting) => (
                         <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Link to={setting.link}>
+                        <Link style={{color: '#293132', textDecoration: 'none'}} to={setting.link}>
                             <Typography textAlign="center">{setting.title}</Typography>
                         </Link>
                         </MenuItem>

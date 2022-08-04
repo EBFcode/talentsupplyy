@@ -1,0 +1,79 @@
+.containerCount{
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 5px;
+}
+
+.CountObjets{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows:  1fr 1fr;
+    grid-gap: 15px;
+}
+
+
+.CountObjet{
+    display: flex;
+    align-items: center;
+    background-color: #e1872d;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    color: #fff;
+    align-self: start;
+    font-size: 15px;
+
+    
+
+}
+
+.CountObjet button{
+    width: 30px;
+    margin: 0 5px;
+    font-size: 25px;
+
+    color: #fff;
+
+    background-color: #2B4162;
+    box-shadow: 5px 5px 5px rgba(43,65,98, 0.5);
+    border-radius: 5px;
+    border: 1px solid #fff;
+
+}
+
+.CountObjet button:hover{
+    box-shadow: 2px 2px 5px rgba(43,65,98, 0.5);
+}
+
+.CountObjet button:active{
+    background-color: #131e2e;
+    color: #FA9F42;
+
+
+}
+
+.textContainer button{
+
+    box-shadow: 5px 5px 5px rgba(43,65,98, 0.5);
+    border-radius: 5px;
+
+    background-color: #2B4162;
+    border: 1px solid #fff;
+
+    padding: 15px;
+    color: #fff;
+
+    font-size: 15px;
+}
+
+.textContainer button:hover{
+    box-shadow: 2px 2px 5px rgba(43,65,98, 0.5);
+
+}
+
+.textContainer button:active{
+    background-color: #131e2e;
+    color: #FA9F42;
+    
+}

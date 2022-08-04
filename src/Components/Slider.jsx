@@ -25,9 +25,7 @@ export default function Slider() {
                 </Container>
                 
             </Box>
-            
-            
-            
+                        
         </React.Fragment>
 
     )
