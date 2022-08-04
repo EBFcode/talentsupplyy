@@ -1,21 +1,20 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import { doc, getDoc, getFirestore} from "firebase/firestore";
 
 export default function ItemDetailContainer() {
     const [item, setItem] = useState([]);
     let { idItem } = useParams();
 
     useEffect(() => {
-        let url = "https://imcod3r.github.io/CatStoreApi/api.json";
+        const database = getFirestore();
+        const coleccion = "productos";
+        const reference = doc(database, coleccion, idItem);
 
-        fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            const arrayFiltrado = data.find((item) => item.id === Number(idItem));
-            setItem(arrayFiltrado)
-        })
-        .catch((error) => console.warn(error));
+        getDoc(reference).then((snapshot) => {setItem({id: snapshot.id, ...snapshot.data()})})
+        .catch((error) => console.log(error))
+    
     }, [idItem]);
     return (
         <>
