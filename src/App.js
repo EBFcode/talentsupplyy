@@ -7,6 +7,7 @@ import AgregandoProductos from './Test/AgregandoProductos';
 import CartWidget from './Components/CartContainer/CartWidget';
 import { ThemeProvider } from '@emotion/react';
 import theme from './themeconfig'
+import Slider from './Components/Slider.jsx';
 
 // rfc 
 
@@ -18,7 +19,7 @@ function App() {
           <BrowserRouter>
             <NavBar />
             <Routes>
-              <Route path='/' element={<ItemListContainer/>} />
+              <Route path='/' element={<> <Slider /> <ItemListContainer /> </>}></Route>
               <Route path='/category/:idCategory' element={<ItemListContainer/>} />
               <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
               <Route path='/cart' element={<CartWidget/>} /> 
