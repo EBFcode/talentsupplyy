@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -60,7 +60,7 @@ const handleCloseUserMenu = () => {
 
 return (
     <AppBar position="static">
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" >
             <Toolbar disableGutters>
                 {/* Logo  */}
                 <Typography
@@ -154,7 +154,7 @@ return (
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                        <AddCircleIcon sx={{color:'#fff'}}></AddCircleIcon>
                     </IconButton>
                     </Tooltip>
                     <Menu

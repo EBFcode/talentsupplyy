@@ -3,6 +3,7 @@ import './styleAgregarProducto.css';
 import {addDoc, collection, getFirestore} from 'firebase/firestore';
 
 export default function AgregandoProductos() {
+    
 
     const [producto, setProducto] = React.useState({
         nombre:'',
@@ -21,8 +22,7 @@ export default function AgregandoProductos() {
         
         try {
             addDoc(reference, producto).then(({id}) => console.log(id))
-            console.log('Todo ok');
-            alert("Agregado")
+            
         } catch (error) {
             console.log(error.message)
         }
@@ -33,7 +33,7 @@ export default function AgregandoProductos() {
         
             <div className='contenedorForm'>
                 <div>
-                    <h1>Agrega productos a la base de datos </h1>
+                    <h1 className='titular'>Agrega productos a la base de datos </h1>
                 </div>
                 <form className='formAgregar' onSubmit={handleSubmit}>
                     <input id='ingresarNombre' name='nombre' type="text" placeholder='Ingresar Nombre' onChange={handleChanges} required/>
