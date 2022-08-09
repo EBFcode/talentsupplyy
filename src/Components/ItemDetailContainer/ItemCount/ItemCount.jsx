@@ -6,8 +6,6 @@ export default function ItemCount({stock, initial, onAdd, setMostrarBoton}) {
     
     const [count, setCount]  = useState(initial);
 
-    // Declarando un STATE 
-    // const [stock, setStock] = useState(stock = stock - initial);
 
     function sumar(){
         if (count < stock){
@@ -33,7 +31,6 @@ export default function ItemCount({stock, initial, onAdd, setMostrarBoton}) {
                     <div className="CountObjet" style={{margin: '0 auto'}}>
                         <button onClick={() => restar()} className="menos">-</button>
                         <h4>{count}</h4>
-                        {/* Funcion sumar 1 */}
                         <button onClick={() => sumar()} className="mas">+</button>
                     </div>
                 </div>

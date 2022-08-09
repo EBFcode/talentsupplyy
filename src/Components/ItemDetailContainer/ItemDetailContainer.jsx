@@ -12,7 +12,8 @@ export default function ItemDetailContainer() {
         const coleccion = "productos";
         const reference = doc(database, coleccion, idItem);
 
-        getDoc(reference).then((snapshot) => {setItem({id: snapshot.id, ...snapshot.data()})})
+        getDoc(reference).then((snapshot) => {
+            setItem({id: snapshot.id, ...snapshot.data()})})
         .catch((error) => console.log(error))
     
     }, [idItem]);

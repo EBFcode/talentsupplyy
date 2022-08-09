@@ -3,7 +3,7 @@ import React from 'react'
 export const CartContext = React.createContext();
 
 export default function CartProvider({children}) {
-    const [cart, setCart] = React.useState([])
+    const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem('carrito')) || [])
     const [total, setTotal] = React.useState(0)
 
     function isInCart(id) {
@@ -22,19 +22,25 @@ export default function CartProvider({children}) {
     }
 
     function removeItemId(id){
-        cart.filter((element) => element.id !== id);
+        const eliminarItem = cart.filter((element) => element.id !== id);
+        if(eliminarItem) setCart(eliminarItem);
     }
 
     function clear() {
         setCart([])
+        setTotal(0)
+        localStorage.clear();
     }
 
     React.useEffect(() =>{
+        localStorage.setItem('carrito', JSON.stringify(cart));
         const total = cart.reduce((previo, acumulador) => previo + acumulador.precio * acumulador.quantity, 0);
         setTotal(total);
     }, [cart])
 
+    
+
     return (
-            <CartContext.Provider value={{addItem, cart, total}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{addItem, cart, clear, total}}>{children}</CartContext.Provider>
     )
 }

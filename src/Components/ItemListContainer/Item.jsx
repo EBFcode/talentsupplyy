@@ -7,7 +7,6 @@ export default function Item({ item }) {
     
     return (
         <>
-        <Container maxWidth="xl">
             <Card sx={{ maxWidth: 345, mt: 5 }}>
                 <CardActionArea href={`/item/${item.id}`}>
 
@@ -32,7 +31,6 @@ export default function Item({ item }) {
                     
                 </CardActionArea>
             </Card>
-        </Container>
         
 
         

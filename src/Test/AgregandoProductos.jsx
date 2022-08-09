@@ -15,14 +15,13 @@ export default function AgregandoProductos() {
 
     const handleChanges = ({target: {name, value}}) => setProducto({...producto, [name] : value})
 
-    function handleSubmit(e){ 
-        e.preventDefault();
+    function handleSubmit(evento){ 
+        evento.preventDefault();
         const db = getFirestore();
         const reference = collection(db, 'productos');
         
         try {
-            addDoc(reference, producto).then(({id}) => console.log(id))
-            
+            addDoc(reference, producto).then(({id}) => console.log(id))       
         } catch (error) {
             console.log(error.message)
         }
@@ -41,7 +40,7 @@ export default function AgregandoProductos() {
                     <input id='ingresarPrecio' name='precio' type="number" placeholder='Ingresar Precio' onChange={handleChanges} required/>
                     <input id='ingresarCategoria' name='categoria' type="text" placeholder='Ingresar Categoria' onChange={handleChanges} required/>
                     <input id='ingresarStock' name='stock' type="number" placeholder='Ingresar Stock' onChange={handleChanges} required/>    
-                    <button> Agregar </button>
+                    <button type='submit'> Agregar </button>
                 </form>
             </div>    
             

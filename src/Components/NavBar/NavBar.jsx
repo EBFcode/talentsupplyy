@@ -111,7 +111,7 @@ return (
                     }}
                     >
                     {pages.map((page) => (
-                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                         <Link style={{color: '#293132', textDecoration: 'none'}} to={page.link}>
                             <Typography textAlign="center">{page.title}</Typography>
                         </Link>
@@ -142,7 +142,7 @@ return (
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page) => (
                     <Button
-                        key={page}
+                        key={page.id}
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                     >
@@ -174,7 +174,7 @@ return (
                     onClose={handleCloseUserMenu}
                     >
                     {settings.map((setting) => (
-                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                        <MenuItem key={setting.id} onClick={handleCloseUserMenu}>
                         <Link style={{color: '#293132', textDecoration: 'none'}} to={setting.link}>
                             <Typography textAlign="center">{setting.title}</Typography>
                         </Link>
