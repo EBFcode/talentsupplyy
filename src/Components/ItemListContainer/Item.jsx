@@ -7,7 +7,7 @@ export default function Item({ item }) {
     
     return (
         <>
-            <Card sx={{ width: 345,  mt: 5 }}>
+            <Card sx={{ width: 310,  mt: 5 }}>
                 
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -33,7 +33,7 @@ export default function Item({ item }) {
                         
                     </Typography>
                     <Button  href={`/item/${item.id}`}>VER PRODUCTO</Button>
-                    <Button  href={`/cart`}>Agregar al carrito</Button>
+                    <Button  href={`/`}>Agregar al carrito</Button>
                 </CardContent>
                     
                 

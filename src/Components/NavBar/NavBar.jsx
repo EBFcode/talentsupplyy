@@ -14,6 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
+// Menu configuracion
 const pages = [
     {
     id: 1,
@@ -22,8 +23,13 @@ const pages = [
     },
     {
         id: 2,
-        title: 'Ofertas',
-        link: '/ofertas', 
+        title: 'Laptops',
+        link: '/category/laptop', 
+    },
+    {
+        id: 3,
+        title: 'Televisores',
+        link: '/category/televisores', 
     }
 ];
 const settings = [

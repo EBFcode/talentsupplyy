@@ -18,6 +18,7 @@ export default function ItemDetail({ item }) {
     <>
       <div className="contenedor">
         <div className="gridContainer">
+
           <div className="gridItem">
             <img src={item.img} alt={item.nombre} />
           </div>
@@ -36,14 +37,12 @@ export default function ItemDetail({ item }) {
                   setMostrarBoton={setMostrarBoton}
                 />
               ) : (
-                
                 <Link to={"/cart"} style={{ textDecoration: "none" }}>
                   <Alert severity="success">
                     <AlertTitle>HECHO!</AlertTitle>
                     Agregado al carrito — <strong>VAMOS, compra más!</strong>
-                </Alert>
+                  </Alert>
                   <button>Finalizar Compra</button>
-
                 </Link>
               )}
             </div>
