@@ -7,39 +7,37 @@ export default function Item({ item }) {
     
     return (
         <>
-            <Card sx={{ maxWidth: 345, mt: 5 }}>
-                <CardActionArea href={`/item/${item.id}`}>
+            <Card sx={{ width: 345,  mt: 5 }}>
+                
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {item.nombre}
+                    </Typography>
 
-                    <CardMedia
-                    component="img"
-                    height="240"
-                    image={item.img}
-                    alt="item.nombre"
-                    />
+                    {/* {item.stock == 0 ? } */}
+                </CardContent>
 
-                    <CardContent sx={{'&:hover': {border: '3 solid black'},}}>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {item.nombre}
-                        </Typography>
-                        <Typography variant="body2" color="text.primary" align="center">
-                            AHORA: {item.precio}
-                        </Typography>
-                    </CardContent>
+                <CardMedia
+                component="img"
+                height="240"
+                image={item.img}
+                alt="item.nombre"
+                />
+
+                <CardContent sx={{'&:hover': {border: '3 solid black'},}}>
+
                     
-                </CardActionArea>
+                    
+                    <Typography variant="body2" color="text.primary" align="center">
+                        Precio: {item.precio}
+                        
+                    </Typography>
+                    <Button  href={`/item/${item.id}`}>VER PRODUCTO</Button>
+                    <Button  href={`/cart`}>Agregar al carrito</Button>
+                </CardContent>
+                    
+                
             </Card>
-        
-
-        
-        {/* <div className='container'>
-            <p> Nombre: {item.nombre}</p>
-            <p>Precio: {item.precio}</p>
-            <img src={item.img} alt={item.nombre} />
-
-            <button>
-                <Link to={`/item/${item.id}`}>Ver detalle del producto</Link>
-            </button>
-        </div> */}
         </>
     );
 }

@@ -3,7 +3,6 @@ import './ItemListContainer.css'
 import ItemList from './itemList'
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
-import { Alert, AlertTitle } from "@mui/material";
 import { Box } from '@mui/system';
 
 
@@ -35,10 +34,7 @@ export default function ItemListContainer() {
         <>
         
 
-        <Alert severity="success">
-            <AlertTitle>HECHO!</AlertTitle>
-            Agregado al carrito — <strong>VAMOS, compra más!</strong>
-        </Alert>
+        
 
         {loading && <div className="centrando"><div className="lds-hourglass"></div><img src="https://c.tenor.com/6RjGDYS5580AAAAd/khe-esperando.gif" alt="" /></div>}
 

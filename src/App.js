@@ -14,7 +14,6 @@ import Checkout from './Components/Checkout.jsx';
 
 function App() {
   return (
-    
       <CartProvider>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
@@ -26,7 +25,6 @@ function App() {
               <Route path='/cart' element={<Cart />} />
               <Route path='/ingresarProductos' element={<AgregandoProductos />} />
               <Route path='/checkout' element={<Checkout />} />
-
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

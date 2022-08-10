@@ -21,7 +21,7 @@ export default function AgregandoProductos() {
         const reference = collection(db, 'productos');
         
         try {
-            addDoc(reference, producto).then(({id}) => console.log(id))       
+            addDoc(reference, producto).then(({id}) => alert("producto agregado. ID: " + id))       
         } catch (error) {
             console.log(error.message)
         }

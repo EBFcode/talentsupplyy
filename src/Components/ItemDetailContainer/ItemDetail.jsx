@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import ItemCount from "./ItemCount/ItemCount";
 import "./itemDetail.css";
+import { Alert, AlertTitle, Button } from "@mui/material";
+
 
 export default function ItemDetail({ item }) {
   const [mostrarBoton, setMostrarBoton] = React.useState(true);
@@ -34,8 +36,14 @@ export default function ItemDetail({ item }) {
                   setMostrarBoton={setMostrarBoton}
                 />
               ) : (
+                
                 <Link to={"/cart"} style={{ textDecoration: "none" }}>
-                  Finalizar Compra
+                  <Alert severity="success">
+                    <AlertTitle>HECHO!</AlertTitle>
+                    Agregado al carrito — <strong>VAMOS, compra más!</strong>
+                </Alert>
+                  <button>Finalizar Compra</button>
+
                 </Link>
               )}
             </div>

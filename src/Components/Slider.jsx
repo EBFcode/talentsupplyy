@@ -2,7 +2,6 @@ import React from 'react'
 import './Slider.css'
 import { CardMedia, Container, Typography, Button } from "@mui/material";
 import { Box } from '@mui/system';
-import { Transaction } from 'firebase/firestore';
 
 export default function Slider() {
     return (
