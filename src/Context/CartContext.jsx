@@ -5,7 +5,9 @@ export const CartContext = React.createContext();
 export default function CartProvider({children}) {
     const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem('carrito')) || [])
     const [total, setTotal] = React.useState(0)
+    const [cantidad, setCantidad] = React.useState(0);
 
+    
     function isInCart(id) {
         return cart.some(e => e.id === Number(id))
     }
@@ -36,11 +38,12 @@ export default function CartProvider({children}) {
         localStorage.setItem('carrito', JSON.stringify(cart));
         const total = cart.reduce((previo, acumulador) => previo + acumulador.precio * acumulador.quantity, 0);
         setTotal(total);
+
+        const carritoCantidad = cart.reduce((previo, acumulador) => previo + acumulador.quantity,0);
+        setCantidad(carritoCantidad);
     }, [cart])
 
-    
-
     return (
-            <CartContext.Provider value={{addItem, cart, clear, total}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{addItem, cart, clear, total, cantidad}}>{children}</CartContext.Provider>
     )
 }

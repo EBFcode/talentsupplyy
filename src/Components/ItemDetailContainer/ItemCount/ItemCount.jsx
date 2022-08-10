@@ -2,7 +2,7 @@ import './ItemCount.css'
 import React, { useState } from 'react';
 
 
-export default function ItemCount({stock, initial, onAdd, setMostrarBoton}) {
+export default function ItemCount({stock, initial, onAdd, setMostrarBoton = ''}) {
     
     const [count, setCount]  = useState(initial);
 
