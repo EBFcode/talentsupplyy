@@ -42,10 +42,6 @@ export default function ItemDetail({ item }) {
           </div>
         </div>
       </div>
-
-      {/* <div className="container">
-        
-        </div> */}
     </>
   );
 }

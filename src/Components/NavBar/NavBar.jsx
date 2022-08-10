@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -28,13 +29,13 @@ const pages = [
 const settings = [
     {
     id: 1,
-    title: 'Ingresar productos',
-    link: '/ingresarProductos', 
+    title: '🛒 Ir al carrito',
+    link: '/cart', 
     },
     {
         id: 2,
-        title: 'Eliminar Productos',
-        link: '/eliminarProductos', 
+        title: '💸 Ir al checkout',
+        link: '/checkout', 
     }
 ];
 
@@ -154,7 +155,7 @@ return (
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <AddCircleIcon sx={{color:'#fff'}}></AddCircleIcon>
+                        <LocalGroceryStoreIcon sx={{color:'#fff'}}></LocalGroceryStoreIcon>
                     </IconButton>
                     </Tooltip>
                     <Menu

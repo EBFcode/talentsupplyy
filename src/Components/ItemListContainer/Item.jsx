@@ -22,9 +22,6 @@ export default function Item({ item }) {
                             {item.nombre}
                         </Typography>
                         <Typography variant="body2" color="text.primary" align="center">
-                            ANTES: {54364}
-                        </Typography>
-                        <Typography variant="body2" color="text.primary" align="center">
                             AHORA: {item.precio}
                         </Typography>
                     </CardContent>
