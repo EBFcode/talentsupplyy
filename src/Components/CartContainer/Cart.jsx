@@ -59,7 +59,7 @@ export default function CartWidget() {
                         <TableCell align="right">{row.precio}</TableCell>
                         <TableCell align="right">{row.precio * row.quantity}</TableCell>
                         <TableCell align="right"><button onClick={() => removeItemId(row.id)}>
-                          p
+                          x
                         </button></TableCell>
                       </TableRow>
                     ))}

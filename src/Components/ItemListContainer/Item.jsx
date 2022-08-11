@@ -34,13 +34,12 @@ export default function Item({ item }) {
                 />
 
                 <CardContent sx={{'&:hover': {border: '3 solid black'}}}>
-
                     <Typography variant="body2" color="text.primary" align="center">
                         Precio: {item.precio}
-                        
                     </Typography>
-                    <Button  href={`/item/${item.id}`}>VER PRODUCTO</Button>
-                    <ItemCount stock={item.stock} initial={1} onAdd={onAdd} ></ItemCount>
+                    <Button  href={`/item/${item.id}`}>
+                        VER PRODUCTO
+                    </Button>
                 </CardContent>
             </Card>
         </>

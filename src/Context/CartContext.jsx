@@ -7,15 +7,24 @@ export default function CartProvider({children}) {
     const [total, setTotal] = React.useState(0)
     const [cantidad, setCantidad] = React.useState(0);
 
+    const [resultadoTerminarCompra, setResultadoTerminarCompra] = React.useState(true);
+
+
     
     function isInCart(id) {
-        return cart.some(e => e.id === Number(id))
+        return cart.some(e => e.id === id);
     }
 
     function addItem(item, quantity) {
         if (isInCart(item.id)) {
             let newCart = cart;
-            let indexProduct = newCart.findIndex(element => element.id === Number(item.id));
+            let indexProduct = newCart.findIndex(element => element.id === item.id);
+        
+            if (newCart[indexProduct].quantity + quantity > item.stock) {
+                return setResultadoTerminarCompra(false)
+
+            } 
+
             newCart[indexProduct].quantity = Number(newCart[indexProduct].quantity) + Number(quantity);
             setCart([...newCart]);
         } else {
@@ -45,6 +54,6 @@ export default function CartProvider({children}) {
     }, [cart])
 
     return (
-            <CartContext.Provider value={{addItem, cart, clear,removeItemId, total, cantidad}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{addItem, cart, clear,removeItemId, total, cantidad, resultadoTerminarCompra}}>{children}</CartContext.Provider>
     )
 }
