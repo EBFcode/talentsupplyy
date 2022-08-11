@@ -14,6 +14,8 @@ Deploy: https://nth-champion-337821.firebaseapp.com/
 
 ![Gif Proyecto Demo](https://media.giphy.com/media/El8xtTLkQWy3qbjgnp/giphy.gif)
 
+![GIF-Project](https://media.giphy.com/media/OUO0vk15dzXIFLjwYm/giphy.gif)
+
 ## Authors
 
 GIF LINK: https://thesimsbuilding.com/wp-content/uploads/2022/08/gifTalentSupply.gif
