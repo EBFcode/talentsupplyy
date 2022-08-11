@@ -11,9 +11,12 @@ import { CartContext } from '../../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import Typography from '@mui/material/Typography'
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
+import { useContext } from 'react';
 
 export default function CartWidget() {
+
+  const { removeItemId } = useContext (CartContext)
 
   const {cart, total} = React.useContext(CartContext);
   const navigate = useNavigate()
@@ -55,6 +58,9 @@ export default function CartWidget() {
                         <TableCell align="right">{row.quantity}</TableCell>
                         <TableCell align="right">{row.precio}</TableCell>
                         <TableCell align="right">{row.precio * row.quantity}</TableCell>
+                        <TableCell align="right"><button onClick={() => removeItemId(row.id)}>
+                          p
+                        </button></TableCell>
                       </TableRow>
                     ))}
 

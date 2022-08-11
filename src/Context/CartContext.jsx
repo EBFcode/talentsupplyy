@@ -31,6 +31,7 @@ export default function CartProvider({children}) {
     function clear() {
         setCart([])
         setTotal(0)
+        setCantidad(0)
         localStorage.clear();
     }
 
@@ -44,6 +45,6 @@ export default function CartProvider({children}) {
     }, [cart])
 
     return (
-            <CartContext.Provider value={{addItem, cart, clear, total, cantidad}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{addItem, cart, clear,removeItemId, total, cantidad}}>{children}</CartContext.Provider>
     )
 }
