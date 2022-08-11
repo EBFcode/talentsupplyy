@@ -9,9 +9,11 @@ Este proyecto trata de venta de tenologias.
 
 ## Demo
 
+
 Deploy: https://nth-champion-337821.firebaseapp.com/
 
-![Gif Proyecto Demo](https://thesimsbuilding.com/wp-content/uploads/2022/08/gifTalentSupply.gif)
+![Gif Proyecto Demo](https://thesimsbuilding.com/wp-content/uploads/2022/08/gifAdobe_pantalla_2022-08-11_a_la_s__1_22_00_a_-m__AdobeExpress.gif)
+## Authors
 
 GIF LINK: https://thesimsbuilding.com/wp-content/uploads/2022/08/gifTalentSupply.gif
 ## Authors
