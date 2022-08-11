@@ -18,14 +18,15 @@ function App() {
         <ThemeProvider theme={theme}>
           <BrowserRouter>
             <NavBar />
-            <Routes>
-              <Route path='/' element={<> <Slider /> <ItemListContainer /> </>}></Route>
-              <Route path='/category/:idCategory' element={<ItemListContainer />} />
-              <Route path='/item/:idItem' element={<ItemDetailContainer />}/>
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/ingresarProductos' element={<AgregandoProductos />} />
-              <Route path='/checkout' element={<Checkout />} />
-            </Routes>
+              <Routes>
+                <Route path='/' element={<> <Slider /> <ItemListContainer /> </>}></Route>
+                <Route path='/category/:idCategory' element={<ItemListContainer />} />
+                <Route path='/item/:idItem' element={<ItemDetailContainer />}/>
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/ingresarProductos' element={<AgregandoProductos />} />
+                <Route path='/checkout' element={<Checkout />} />
+              </Routes>
+
           </BrowserRouter>
         </ThemeProvider>
       </CartProvider>
