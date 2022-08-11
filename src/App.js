@@ -8,6 +8,8 @@ import Cart from './Components/CartContainer/Cart';
 import { ThemeProvider } from '@emotion/react';
 import theme from './themeconfig'
 import Slider from './Components/Slider.jsx';
+import Footer from './Components/Footer.jsx';
+
 import Checkout from './Components/Checkout.jsx';
 
 // rfc 
@@ -18,6 +20,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <BrowserRouter>
             <NavBar />
+
               <Routes>
                 <Route path='/' element={<> <Slider /> <ItemListContainer /> </>}></Route>
                 <Route path='/category/:idCategory' element={<ItemListContainer />} />
@@ -27,6 +30,7 @@ function App() {
                 <Route path='/checkout' element={<Checkout />} />
               </Routes>
 
+            <Footer />
           </BrowserRouter>
         </ThemeProvider>
       </CartProvider>
